@@ -1,45 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Welcome to Our Site</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Astronaut</title>
+    <h1 id="typed-text"></h1>
+
+    <style>
+      /* Add custom CSS styles here */
+	  
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+      }
+
+      nav {
+        display: flex;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        margin: 0 1rem;
+      }
+
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+
+      .hero {
+        height: 100vh;
+        background-color: #000; /* set the initial background color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .scrollable p{
+        font-family: "NTR",sans-serif;
+        color: var(--slate);
+        max-width: 600px;
+        font-size: 22px;
+        text-align: justify;
+        margin: 0;
+      }
+      .scrollable h2{
+      font-family: "NTR",sans-serif;
+      color: var(--lightest-slate);
+      font-size: 46px;
+      font-weight: 700;
+      }
+      
+     
+      .cta {
+        background-color: #ffffff;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .cta h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta button {
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      .cta button:hover {
+        background-color: #ffffff;
+        color: #000000;
+        transition: all 0.3s ease;
+      }
+
+      footer {
+        background-color: #000000;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin: 0;
+      }
+
+      footer a {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 40%;
+  justify-content: space-between;
+  
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.buttons a {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+i {
+  font-size: 24px;
+  color: #00d2f8;
+}
+
+.typing-animation {
+  overflow: hidden; /* prevent text from overflowing */
+  border-right: .15em solid rgb(0, 238, 255); /* create the cursor effect */
+  white-space: nowrap; /* keep the text on one line */
+  margin: 0 auto; /* center the element */
+  animation: typing 3.5s steps(30, end), blink .75s step-end infinite; /* apply the animation */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(0, 238, 255)}
+}
+
+
+</style>
   </head>
   <body>
-    <header>
-      <h1>Welcome to Our Site</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
     <section class="hero">
-      <h2>Discover Our Products</h2>
-      <p>We offer a wide range of high-quality products to meet your needs.</p>
-      <a href="#" class="button">Shop Now</a>
-    </section>
-    <section class="features">
-      <h3>Our Features</h3>
-      <div class="feature">
-        <img src="feature1.jpg">
-        <h4>Easy Ordering</h4>
-        <p>Ordering from us is fast and easy. Just choose your products and checkout.</p>
-      </div>
-      <div class="feature">
-        <img src="feature2.jpg">
-        <h4>Free Shipping</h4>
-        <p>We offer free shipping on all orders over $50.</p>
-      </div>
-      <div class="feature">
-        <img src="feature3.jpg">
-        <h4>Excellent Customer Service</h4>
-        <p>Our dedicated customer service team is here to help you with any questions or concerns.</p>
+      <div>
+        <h1 class="typing-animation">Welcome to Izz Domain</h1>
+        <p>Doing my own stuff</p>
       </div>
     </section>
-    <footer>
-      <p>&copy; 2023 Our Site. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+	<div class="scrollable">
+		<section class="section1">
+		  <h2>My Profile</h2>
+		  <p>I am currently a Software Development Intern at Eagle Navigator , working in the IT department.
+        </p>
+		</section>
+		<section class="section2">
+		  <h2>Education</h2>
+		  <p>This is the second section of my page.</p>
+		</section>
+		<section class="section3">
+		  <h2>Experience</h2>
+		  <p>This is the third section of my page.</p>
+		</section>
+	  </div>
+
+    </body>
+     <div class="sidebar">
+      <div class="buttons">
+        <a href="https://twitter.com/yourusername">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourusername">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/izzatizzu">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:izzatizzuddin2702@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+		  </div>
+      </html>
+      
