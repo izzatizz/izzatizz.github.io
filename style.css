@@ -1,0 +1,194 @@
+
+    /* Add custom CSS styles here */
+    @media (max-width: 768px) {
+    header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    nav {
+    margin-top: 20px;
+    }
+
+    section {
+    margin: 40px 0;
+    }
+
+    section h2 {
+    font-size: 24px;
+    }
+
+    section p {
+    font-size: 16px;
+    }
+    }
+
+    body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    }
+
+    h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    }
+
+    nav {
+    display: flex;
+    }
+
+    nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+
+    nav li {
+    margin: 0 1rem;
+    }
+
+    nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    }
+
+    .hero {
+    height: 100vh;
+    background-color: #000; /* set the initial background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .hero h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    }
+
+    .hero p {
+    font-size: 1.5rem;
+    text-align: center;
+    }
+    .scrollable p{
+    font-family: "NTR",sans-serif;
+    color: var(--slate);
+    max-width: 600px;
+    font-size: 22px;
+    text-align: justify;
+    margin: 0;
+    }
+    .scrollable h2{
+    font-family: "NTR",sans-serif;
+    color: var(--lightest-slate);
+    font-size: 46px;
+    font-weight: 700;
+    }
+
+
+    .cta {
+    background-color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    }
+
+    .cta h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    }
+
+    .cta p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    }
+
+    .cta button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    }
+
+    .cta button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 0.3s ease;
+    }
+
+    footer {
+    background-color: #000000;
+    padding: 2rem;
+    text-align: center;
+    }
+
+    footer p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0;
+    }
+
+    footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    }
+
+    .sidebar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 40%;
+    justify-content: space-between;
+
+    }
+
+    .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    }
+
+    .buttons a {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    }
+
+    i {
+    font-size: 24px;
+    color: #00d2f8;
+    }
+
+    .typing-animation {
+    overflow: hidden; /* prevent text from overflowing */
+    border-right: .15em solid rgb(0, 238, 255); /* create the cursor effect */
+    white-space: nowrap; /* keep the text on one line */
+    margin: 0 auto; /* center the element */
+    animation: typing 3.5s steps(30, end), blink .75s step-end infinite; /* apply the animation */
+    }
+
+    @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    }
+
+    @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 238, 255)}
+    }
+
