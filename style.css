@@ -167,20 +167,5 @@
     50% { border-color: rgb(0, 238, 255)}
     }
 
-    .drawn-text {
-        font-family: cursive;
-        font-size: 100px;
-        position: relative;
-        animation: draw 10s linear forwards;
-      }
-      
-      @keyframes draw {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
       
 
