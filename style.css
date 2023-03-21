@@ -166,11 +166,12 @@
     from, to { border-color: transparent }
     50% { border-color: rgb(0, 238, 255)}
     }
+
     .drawn-text {
         font-family: cursive;
-        font-size: 48px;
+        font-size: 100px;
         position: relative;
-        animation: draw 2s linear forwards;
+        animation: draw 10s linear forwards;
       }
       
       @keyframes draw {
