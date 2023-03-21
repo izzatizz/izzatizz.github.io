@@ -47,9 +47,9 @@
     }
 
     .hero h1 {
-        font-family: cursive;
-        font-size: 48px;
-        text-shadow: 2px 2px #333, 4px 4px #666, 6px 6px #999;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
     }
 
     .hero p {
@@ -166,4 +166,20 @@
     from, to { border-color: transparent }
     50% { border-color: rgb(0, 238, 255)}
     }
+    .drawn-text {
+        font-family: cursive;
+        font-size: 48px;
+        position: relative;
+        animation: draw 2s linear forwards;
+      }
+      
+      @keyframes draw {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      
 
