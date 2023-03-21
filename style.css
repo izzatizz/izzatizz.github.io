@@ -3,6 +3,7 @@
     background-color: #000000;
     color: #ffffff;
     font-family: "NTR";
+    left: 0;
     }
 
     header {
@@ -166,6 +167,58 @@
     from, to { border-color: transparent }
     50% { border-color: rgb(0, 238, 255)}
     }
-
+    .origami-bird {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform: rotate(45deg);
+      }
+      
+      .head {
+        position: absolute;
+        top: 40px;
+        left: 60px;
+        width: 80px;
+        height: 80px;
+        border-top: 40px solid #f5c5c5;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        transform: rotate(-45deg);
+      }
+      
+      .body {
+        position: absolute;
+        top: 120px;
+        left: 40px;
+        width: 120px;
+        height: 120px;
+        border: 40px solid #f5c5c5;
+        transform: rotate(-45deg);
+      }
+      
+      .tail {
+        position: absolute;
+        top: 220px;
+        left: 40px;
+        width: 80px;
+        height: 80px;
+        border-top: 40px solid #f5c5c5;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        transform: rotate(-45deg);
+      }
+      
+      .wing {
+        position: absolute;
+        top: 120px;
+        left: 160px;
+        width: 80px;
+        height: 120px;
+        border-top: 80px solid transparent;
+        border-right: 80px solid #f5c5c5;
+        border-bottom: 80px solid transparent;
+        transform: rotate(45deg);
+      }
+      
       
 
