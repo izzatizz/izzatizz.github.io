@@ -2,7 +2,7 @@
     body {
     background-color: #000000;
     color: #ffffff;
-    font-family: "NTR";
+    font-family: "SF Pro";
     left: 0;
     }
 
@@ -58,7 +58,7 @@
     text-align: center;
     }
     .scrollable p{
-    font-family: "NTR";
+    font-family: "SF Pro";
     color: var(--slate);
     max-width: 600px;
     font-size: 22px;
@@ -66,7 +66,7 @@
     margin: 0;
     }
     .scrollable h2{
-    font-family: "NTR";
+    font-family: "SF Pro";
     color: var(--lightest-slate);
     font-size: 46px;
     font-weight: 700;
