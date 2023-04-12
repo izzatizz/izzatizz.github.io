@@ -97,3 +97,25 @@ function generateFood() {
     checkCollisions();
     checkFoodCollision();
     }, 100);
+    function endGame() {
+        clearInterval(intervalId);
+        document.getElementById('gameover').innerHTML = 'Game Over!';
+        document.getElementById('retry').style.display = 'block';
+    }
+    
+    var intervalId = setInterval(function() {
+        ctx.clearRect(0, 0, boardWidth, boardHeight);
+        drawSnake();
+        drawFood();
+        moveSnake();
+        checkCollisions();
+        checkFoodCollision();
+    
+        if (gameOver) {
+            endGame();
+        }
+    }, 100);
+    document.getElementById('retry').addEventListener('click', function() {
+        location.reload();
+    });
+        
