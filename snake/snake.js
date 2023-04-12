@@ -139,14 +139,46 @@ intervalId = setInterval(function() {
 
 	if (gameOver) {
 		clearInterval(intervalId);
-		document.getElementById('gameover').innerHTML = 'Game Over';
-		document.getElementById('retry').style.display = 'block';
-	}
+		ctx.font = '48px serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Game Over', boardWidth/2, boardHeight/2);
+        document.getElementById('retry-button').style.display = 'block';
+    }
+}, 100);
+
+// Retry button event listener
+document.getElementById('retry-button').addEventListener('click', function() {
+snake = [{
+x: boardWidth/2,
+y: boardHeight/2
+}];
+food = {
+x: 0,
+y: 0
+};
+direction = '';
+gameOver = false;
+score = 0;
+document.getElementById('score').innerHTML = 'Score: ' + score;
+generateFood();
+intervalId = setInterval(function() {
+ctx.clearRect(0, 0, boardWidth, boardHeight);
+drawSnake();
+drawFood();
+moveSnake();
+checkCollisions();
+checkFoodCollision();
+if (gameOver) {
+    clearInterval(intervalId);
+    ctx.font = '48px serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Game Over', boardWidth/2, boardHeight/2);
+    document.getElementById('retry-button').style.display = 'block';
+}
 
 }, 100);
 
-// Handle retry button click event
-document.getElementById('retry').addEventListener('click', function() {
-	location.reload();
+document.getElementById('retry-button').style.display = 'none';
 });
+
 
