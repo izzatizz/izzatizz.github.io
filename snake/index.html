@@ -1,12 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Snake Game</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
 </head>
 <body>
-	<canvas id="board" width="400" height="400"></canvas>
-	<button id="reset-button">Reset</button>
-	<div id="score"></div>
-	<script src="snake.js"></script>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script>
+		// Initialize the canvas and context
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+
+		// Set up the initial game state
+		var snake = [{x: 10, y: 10}];
+		var food = {x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20)};
+		var direction = 'right';
+		var score = 0;
+
+		// Define the movement function
+		function moveSnake() {
+			// Move the snake in the chosen direction
+			switch (direction) {
+				case 'up':
+					snake.unshift({x: snake[0].x, y: snake[0].y - 1});
+					break;
+				case 'down':
+					snake.unshift({x: snake[0].x, y: snake[0].y + 1});
+					break;
+				case 'left':
+					snake.unshift({x: snake[0].x - 1, y: snake[0].y});
+					break;
+				case 'right':
+					snake.unshift({x: snake[0].x + 1, y: snake[0].y});
+					break;
+			}
+
+			// Check if the snake has collided with the wall or itself
+			if (snake[0].x < 0 || snake[0].x >= 20 || snake[0].y < 0 || snake[0].y >= 20) {
+				alert('Game over');
+				location.reload();
+			}
+
+			for (var i = 1; i < snake.length; i++) {
+				if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+					alert('Game over');
+					location.reload();
+				}
+			}
+
+			// Check if the snake has eaten the food
+			if (snake[0].x == food.x && snake[0].y == food.y) {
+				score++;
+				food.x = Math.floor(Math.random() * 20);
+				food.y = Math.floor(Math.random() * 20);
+			} else {
+				snake.pop();
+			}
+		}
+
+		// Define the drawing function
+		function draw() {
+			// Clear the canvas
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			// Draw the snake
+			ctx.fillStyle = 'green';
+			for (var i = 0; i < snake.length; i++) {
+				ctx.fillRect(snake[i].x * 20, snake[i].y * 20, 20, 20);
+			}
+
+			// Draw the food
+			ctx.fillStyle = 'red';
+			ctx.fillRect(food.x * 20, food.y * 20, 20, 20);
+
+			// Draw the score
+			ctx.fillStyle = 'black';
+			ctx.font = '16px Arial';
+			ctx.fillText('Score: ' + score, 10, canvas.height - 10);
+		}
+
+		// Start the game loop
+		setInterval(function() {
+			moveSnake();
+			draw();
+		}, 100);
+	</script>
 </body>
 </html>
