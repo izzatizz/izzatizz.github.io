@@ -7,10 +7,21 @@
 		canvas {
 			border: 1px solid black;
 		}
+		#restart-button {
+			display: none;
+			margin-top: 10px;
+			padding: 10px;
+			border: none;
+			background-color: blue;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
 	<canvas id="canvas" width="400" height="400"></canvas>
+	<button id="restart-button">Restart Game</button>
 	<script>
 		// Initialize the canvas and context
 		var canvas = document.getElementById('canvas');
@@ -42,14 +53,12 @@
 
 			// Check if the snake has collided with the wall or itself
 			if (snake[0].x < 0 || snake[0].x >= 20 || snake[0].y < 0 || snake[0].y >= 20) {
-				alert('Game over');
-				location.reload();
+				endGame();
 			}
 
 			for (var i = 1; i < snake.length; i++) {
 				if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
-					alert('Game over');
-					location.reload();
+					endGame();
 				}
 			}
 
@@ -80,15 +89,64 @@
 
 			// Draw the score
 			ctx.fillStyle = 'black';
-			ctx.font = '16px Arial';
+			ctx.font = '16';
 			ctx.fillText('Score: ' + score, 10, canvas.height - 10);
-		}
+	}
 
-		// Start the game loop
-		setInterval(function() {
+	// Define the end game function
+	function endGame() {
+		clearInterval(intervalId);
+		document.getElementById('restart-button').style.display = 'block';
+	}
+
+	// Define the restart game function
+	function restartGame() {
+		document.getElementById('restart-button').style.display = 'none';
+		snake = [{x: 10, y: 10}];
+		food = {x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20)};
+		direction = 'right';
+		score = 0;
+		intervalId = setInterval(function() {
 			moveSnake();
 			draw();
 		}, 100);
-	</script>
+	}
+
+	// Set up the event listeners
+	document.addEventListener('keydown', function(event) {
+		switch (event.keyCode) {
+			case 37: // left arrow
+				if (direction != 'right') {
+					direction = 'left';
+				}
+				break;
+			case 38: // up arrow
+				if (direction != 'down') {
+					direction = 'up';
+				}
+				break;
+			case 39: // right arrow
+				if (direction != 'left') {
+					direction = 'right';
+				}
+				break;
+			case 40: // down arrow
+				if (direction != 'up') {
+					direction = 'down';
+				}
+				break;
+		}
+	});
+
+	document.getElementById('restart-button').addEventListener('click', function() {
+		restartGame();
+	});
+
+	// Start the game loop
+	var intervalId = setInterval(function() {
+		moveSnake();
+		draw();
+	}, 100);
+</script>
 </body>
 </html>
